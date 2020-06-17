@@ -10,6 +10,7 @@ namespace PPAplicada1.BLL
 {
     public class ArticuloBLL
     {
+        //clases BLL
         public static bool Guardar(Articulos producto)
         {
             if (!Existe(producto.ArticuloId))
