@@ -17,6 +17,7 @@ namespace PPAplicada1.UI.Registro
     /// <summary>
     /// Interaction logic for RegistrodeProductos.xaml
     /// </summary>
+    /// Un comit para el profe Enel
     public partial class RegistrodeProductos : Window
     {
         Articulos articulos = new Articulos();
