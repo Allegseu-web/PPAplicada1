@@ -17,7 +17,7 @@
         <Label Content="Costo:" HorizontalAlignment="Left" Margin="25,245,0,0" VerticalAlignment="Top" Width="71" Height="25"/>
         <TextBox x:Name="CostoTextBox" HorizontalAlignment="Left" Margin="125,245,0,0" Text="{Binding Costo}" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Height="25" TextChanged="CostoTextBox_TextChanged"/>
         <Label Content="Valor Inventario:" HorizontalAlignment="Left" Margin="25,308,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
-        <TextBox x:Name="ValorInventarioTextBox" HorizontalAlignment="Left" Margin="150,308,0,0" Text="{Binding ValorInventario}" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" Width="250" Height="25" GotFocus="ValorInventarioTextBox_GotFocus"/>
+        <TextBox x:Name="ValorInventarioTextBox" HorizontalAlignment="Left" Margin="150,308,0,0" Text="{Binding ValorInventario}" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" Width="250" Height="25"/>
         <Button x:Name="NuevoBotton" Content="Nuevo" HorizontalAlignment="Left" Margin="25,390,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="NuevoBotton_Click"/>
         <Button x:Name="GuardarBotton" Content="Guardar" HorizontalAlignment="Left" Margin="175,390,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="GuardarBotton_Click"/>
         <Button x:Name="EliminarBotton" Content="Eliminar" HorizontalAlignment="Left" Margin="327,390,0,0" VerticalAlignment="Top" Width="73" Height="25" Click="EliminarBotton_Click"/>
