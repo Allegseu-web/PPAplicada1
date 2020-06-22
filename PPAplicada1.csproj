@@ -9,6 +9,10 @@
 
   <ItemGroup>
     <None Remove="DATA\Articulos.db-shm" />
+    <None Remove="UI\Registro\Buscar.jpg" />
+    <None Remove="UI\Registro\Eliminar.jpg" />
+    <None Remove="UI\Registro\Guardar.jpg" />
+    <None Remove="UI\Registro\Nuevo.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +25,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="UI\Registro\Buscar.jpg" />
+    <Resource Include="UI\Registro\Eliminar.jpg" />
+    <Resource Include="UI\Registro\Guardar.jpg" />
+    <Resource Include="UI\Registro\Nuevo.jpg" />
   </ItemGroup>
 
   <ItemGroup>

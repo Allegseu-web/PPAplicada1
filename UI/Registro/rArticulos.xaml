@@ -7,20 +7,45 @@
         mc:Ignorable="d"
         Title="RegistrodeProductos" Height="475" Width="450">
     <Grid>
-        <Label Content="ProductoId:" HorizontalAlignment="Left" Margin="25,50,0,0" VerticalAlignment="Top" Height="25"/>
-        <TextBox x:Name="ProductoIdTexBox" HorizontalAlignment="Left" Margin="125,50,0,0" Text="{Binding ArticuloId}" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Height="25"/>
-        <Button x:Name="BuscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="335,50,0,0" VerticalAlignment="Top" Height="25" Width="65" Click="BuscarButton_Click"/>
-        <Label Content="Descripcion:" HorizontalAlignment="Left" Margin="25,113,0,0" VerticalAlignment="Top" Width="71" Height="25"/>
-        <TextBox x:Name="DescripcionTextBox" HorizontalAlignment="Left" Margin="125,113,0,0" Text="{Binding Descripcion}" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Height="25"/>
-        <Label Content="Existencias:" HorizontalAlignment="Left" Margin="25,181,0,0" VerticalAlignment="Top" Width="71" Height="25"/>
-        <TextBox x:Name="ExistenciaTextBox" HorizontalAlignment="Left" Margin="125,181,0,0" Text="{Binding Existencias}" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Height="25" TextChanged="ExistenciaTextBox_TextChanged"/>
-        <Label Content="Costo:" HorizontalAlignment="Left" Margin="25,245,0,0" VerticalAlignment="Top" Width="71" Height="25"/>
-        <TextBox x:Name="CostoTextBox" HorizontalAlignment="Left" Margin="125,245,0,0" Text="{Binding Costo}" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Height="25" TextChanged="CostoTextBox_TextChanged"/>
-        <Label Content="Valor Inventario:" HorizontalAlignment="Left" Margin="25,308,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
-        <TextBox x:Name="ValorInventarioTextBox" HorizontalAlignment="Left" Margin="150,308,0,0" Text="{Binding ValorInventario}" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" Width="250" Height="25"/>
-        <Button x:Name="NuevoBotton" Content="Nuevo" HorizontalAlignment="Left" Margin="25,390,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="NuevoBotton_Click"/>
-        <Button x:Name="GuardarBotton" Content="Guardar" HorizontalAlignment="Left" Margin="175,390,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="GuardarBotton_Click"/>
-        <Button x:Name="EliminarBotton" Content="Eliminar" HorizontalAlignment="Left" Margin="327,390,0,0" VerticalAlignment="Top" Width="73" Height="25" Click="EliminarBotton_Click"/>
+        <Label Content="ProductoId:" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
+        <TextBox x:Name="ProductoIdTexBox" HorizontalAlignment="Left" Margin="125,50,0,0" Text="{Binding ArticuloId}" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30" FontSize="18"/>
 
+        <Button x:Name="BuscarButton" HorizontalAlignment="Left" Margin="300,50,0,0" VerticalAlignment="Top" Height="30" Width="100" Click="BuscarButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Height="24" Width="34" Source="/UI/Registro/Buscar.jpg"/>
+                <Label Content="Buscar"></Label>
+            </StackPanel>
+        </Button>
+
+        <Label Content="Descripcion:" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
+        <TextBox x:Name="DescripcionTextBox" HorizontalAlignment="Left" Margin="125,113,0,0" Text="{Binding Descripcion}" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Height="25"/>
+        <Label Content="Existencias:" HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
+        <TextBox x:Name="ExistenciaTextBox" HorizontalAlignment="Left" Margin="125,181,0,0" Text="{Binding Existencias}" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Height="25"/>
+        <Label Content="Costo:" HorizontalAlignment="Left" Margin="10,245,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
+        <TextBox x:Name="CostoTextBox" HorizontalAlignment="Left" Margin="125,245,0,0" Text="{Binding Costo}" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Height="25"/>
+        <Label Content="Valor Inventario:" HorizontalAlignment="Left" Margin="10,308,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
+        <TextBox x:Name="ValorInventarioTextBox" HorizontalAlignment="Left" Margin="125,308,0,0" Text="{Binding ValorInventario}" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" Width="275" Height="25" MouseEnter="ValorInventarioTextBox_MouseEnter" MouseLeave="ValorInventarioTextBox_MouseLeave"/>
+        <StackPanel Orientation="Horizontal" Margin="10,350,10,0">
+            <Button x:Name="NuevoBotton" Margin="5,0" Click="NuevoBotton_Click" Height="40" Width="100">
+                <StackPanel Orientation="Horizontal" Height="30">
+                    <Image Height="30" Width="46" Source="/UI/Registro/Nuevo.jpg"/>
+                    <Label Content="Nuevo" Width="52"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="GuardarBotton" Margin="5,0" Click="GuardarBotton_Click" Height="40" Width="100">
+                <StackPanel Orientation="Horizontal" Height="30">
+                    <Image Height="30" Width="40" Source="/UI/Registro/Guardar.jpg"/>
+                    <Label Content="Guardar"></Label>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="EliminarBotton" Margin="5,0" Click="EliminarBotton_Click" Height="40" Width="100">
+                <StackPanel Orientation="Horizontal" Height="30">
+                    <Image Height="30" Width="46" Source="/UI/Registro/Eliminar.jpg"/>
+                    <Label Content="Eliminar"></Label>
+                </StackPanel>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

@@ -61,9 +61,9 @@ namespace PPAplicada1.UI.Registro
 
         private bool Validar()
         {
-            if(DescripcionTextBox.Text.Length == 0 && CostoTextBox.Text.Length == 0 && ExistenciaTextBox.Text.Length == 0)
+            if(DescripcionTextBox.Text.Length == 0)
             {
-                MessageBox.Show("Los campos estan vacios");
+                MessageBox.Show("El campo descripción esta vacio.", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
             else
@@ -83,6 +83,7 @@ namespace PPAplicada1.UI.Registro
             else
             {
                 this.articulos = new Articulos();
+                MessageBox.Show("El ProductoId introduccido no existe.", "No encontrado", MessageBoxButton.OK);
             }
             this.DataContext = this.articulos;
         }
@@ -100,37 +101,34 @@ namespace PPAplicada1.UI.Registro
                     MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        private void ExistenciaTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void ValorInventarioTextBox_MouseEnter(object sender, MouseEventArgs e)
         {
-            /*double costo = 0, existencia = 0, valorinventario = 0;
-            if(ExistenciaTextBox.Text == String.Empty)
+            if (CostoTextBox.Text.Length == 0 || ExistenciaTextBox.Text.Length == 0)
             {
-                ExistenciaTextBox.Text = "0";
-                costo = Double.Parse(CostoTextBox.Text);
+                MessageBox.Show("Debe de llenar los campos Costo y Existencia", "Notificacion", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
-            
-            existencia = Double.Parse(ExistenciaTextBox.Text);
-            valorinventario = Double.Parse(ValorInventarioTextBox.Text);
-            valorinventario = costo * existencia;
-            ValorInventarioTextBox.Text = valorinventario.ToString();*/
-
-            articulos.ValorInventario = articulos.Costo * articulos.Existencias;
+            else
+            {
+                this.articulos.ValorInventario = Double.Parse(CostoTextBox.Text) * Double.Parse(ExistenciaTextBox.Text);
+                ValorInventarioTextBox.Text = articulos.ValorInventario.ToString();
+            }
         }
 
-        private void CostoTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void ValorInventarioTextBox_MouseLeave(object sender, MouseEventArgs e)
         {
-            /*double costo = 0, existencia = 0, valorinventario = 0;
-            if (CostoTextBox.Text == String.Empty)
+            if (CostoTextBox.Text.Length == 0)
             {
                 CostoTextBox.Text = "0";
-                costo = Double.Parse(CostoTextBox.Text);
             }
-            
-            existencia = Double.Parse(ExistenciaTextBox.Text);
-            valorinventario = Double.Parse(ValorInventarioTextBox.Text);
-            valorinventario = costo * existencia;
-            ValorInventarioTextBox.Text = valorinventario.ToString();*/
-            articulos.ValorInventario = articulos.Costo * articulos.Existencias;
+            else if (ExistenciaTextBox.Text.Length == 0)
+            {
+                ExistenciaTextBox.Text = "0";
+            }
+            else
+            {
+                this.articulos.ValorInventario = Double.Parse(CostoTextBox.Text) * Double.Parse(ExistenciaTextBox.Text);
+                ValorInventarioTextBox.Text = articulos.ValorInventario.ToString();
+            }
         }
     }
 }

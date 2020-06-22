@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
 
 namespace PPAplicada1.BLL
 {
@@ -13,10 +14,21 @@ namespace PPAplicada1.BLL
         //clases BLL
         public static bool Guardar(Articulos producto)
         {
-            if (!Existe(producto.ArticuloId))
-                return Insertar(producto);
+            if (Coincidencia(producto) == true)
+            {
+                return false;
+            }
             else
-                return Modificar(producto);
+            {
+                if (!Existe(producto.ArticuloId))
+                {
+                    return Insertar(producto);
+                }
+                else
+                {
+                    return Modificar(producto);
+                }
+            }
         }
 
         private static bool Insertar(Articulos producto)
@@ -42,7 +54,7 @@ namespace PPAplicada1.BLL
             return paso;
         }
 
-        public static bool Modificar(Articulos estudiante)
+        private static bool Modificar(Articulos estudiante)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -112,7 +124,7 @@ namespace PPAplicada1.BLL
             return estudiante;
         }
 
-        public static bool Existe(int id)
+        private static bool Existe(int id)
         {
             Contexto contexto = new Contexto();
             bool encontrado = false;
@@ -129,8 +141,32 @@ namespace PPAplicada1.BLL
             {
                 contexto.Dispose();
             }
-
             return encontrado;
+        }
+
+        private static bool Coincidencia(Articulos producto)
+        {
+            Contexto p = new Contexto();
+            int i = 1;
+            while (true)
+            {
+                if (Buscar(i) != null)
+                {
+                    var art = Buscar(i);
+                    if(art.Descripcion == producto.Descripcion)
+                    {
+                        MessageBox.Show("Este producto ya existe, edite el ya existente. " + " Su Id es :" + art.ArticuloId, "Informacion",
+                            MessageBoxButton.OK, MessageBoxImage.Information);
+
+                        return true;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+                i++;
+            }
         }
     }
 }
